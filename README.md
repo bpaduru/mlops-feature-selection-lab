@@ -170,7 +170,7 @@ After running, the results folder has cv_results.csv, k_curve.csv, f1_by_method.
 
 ## Results and observations
 
-1. **With cross validation, all methods are basically tied.** The F1 scores go from 0.9410 (all features) to 0.9473 (L1), a gap of about 0.006, while the standard deviation of F1 across folds is between 0.02 and 0.03 for every method. The error bars in the chart overlap a lot, so none of the methods is clearly better than the others on this dataset.
+1. **With cross validation, all methods are basically tied.** The F1 scores go from 0.9410 (all features) to 0.9473 (L1), a gap of about 0.006, while the standard deviation of F1 across folds is about 0.02 to 0.03 for every method (0.0197 to 0.0322). The error bars in the chart overlap a lot, so none of the methods is clearly better than the others on this dataset.
 2. **The single split gave a misleading ranking.** On the single split, L1 was the worst method (F1 0.9070). With cross validation it came out first (F1 0.9473). This shows how much one 114 patient test set can mislead a comparison.
 3. **Fewer features work just as well.** The correlation filter and feature importance use about 15 to 16 features on average and score the same as using all 30. Removing half of the features does not hurt the model.
 4. **L1 is the least stable.** Only 6 features were picked by L1 in all 15 folds, compared to 14 to 19 for the other methods. It scores well but chooses a different set of features almost every time, which matters if you need to explain which features the model uses.
